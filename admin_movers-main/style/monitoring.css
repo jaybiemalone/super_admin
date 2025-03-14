@@ -1,0 +1,61 @@
+.legal-monitoring-content{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.legal-monitoring-content .monitoring-container{
+    width: 90%;
+    height: 480px;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.411);
+}
+
+.legal-monitoring-content .monitoring-container .monitor{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.411);
+}
+
+.legal-monitoring-content .monitoring-container .monitor .top{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: #efefef;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.legal-monitoring-content .monitoring-container .monitor .box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+@media  only screen and (max-width: 942px){
+
+}
+@media  only screen and (max-width: 660px){
+}
+@media  only screen and (max-width: 568px){
+}
+
+@media  only screen and (max-width: 475px){
+
+}
+@media  only screen and (max-width: 375px){
+
+}

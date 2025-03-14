@@ -1,0 +1,131 @@
+.legal-monitoring-passenger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 20px;
+}
+
+.passenger-container {
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 600px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.411);
+}
+
+.passenger-container .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    background-color: #efefef;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.passenger-container .bottom {
+    min-width: 600px;
+}
+
+.passenger-container .bottom .passenger-log-container table tr td {
+    padding: 10px 20px;
+    border-style: hidden;
+}
+
+.passenger-container .bottom .passenger-log-container table tr td:nth-child(6) {
+    display: none;
+}
+
+.passenger-container .bottom .passenger-log-container table tr:hover{
+    background-color: rgb(189, 189, 189);
+}
+
+.passenger-container .bottom .passenger-log-container table tr:nth-child(1) {
+    background: gray;
+    color: white;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%; /* Could be more or less depending on screen size */
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  /* Close button (X) */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .passenger-container #detailsModal.modal .modal-content > a{
+      position: absolute;
+      right: 0;
+      margin-right: 30px;
+      margin-top: 10px;
+      background-color: rgb(230, 75, 75);
+      padding: 10px 20px;
+      border-radius: 15px;
+  }
+  .passenger-container #detailsModal.modal .modal-content > a:hover{
+      background-color: green;
+      color: white;
+  }.passenger-container .bottom .passenger-log-container table tr td:nth-child(8) button{
+    background: blue;
+    border: none;
+    padding:10px 25px;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+}
+.passenger-container .bottom .passenger-log-container table tr td:nth-child(8) button:hover{
+    opacity: 80%;
+}
+
+@media only screen and (max-width: 942px) {}
+
+@media only screen and (max-width: 660px) {
+
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(2),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(3),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(4),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(5),
+    .passenger-container .bottom .passenger-log-container table tr td:nth-child(7) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 568px) {}
+
+@media only screen and (max-width: 475px) {}
+
+@media only screen and (max-width: 375px) {}

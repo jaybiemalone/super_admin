@@ -1,0 +1,109 @@
+.driver-content{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+    color: black;
+
+    overflow: auto;
+}
+
+/* content-title design*/
+.driver-content .content-title{
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.driver-content .content-title h1{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.driver-content .content-title .button button{
+    background-color: rgb(30, 96, 218);
+    color: white;
+    margin-bottom: 10px;
+}
+
+.driver-content .content-title .button button,
+.driver-content .content-title .button select{
+    padding: 5px 20px;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* content-status design */
+.driver-content .content-status{
+    box-sizing: border-box;
+    background-color: white;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+.driver-content .content-status ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.driver-content .content-status ul li{
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.driver-content .content-status ul li button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
+
+.driver-content .content-status ul li:nth-child(2){
+    background-color: grey;
+}
+.driver-content .content-status ul li:nth-child(3){
+    background-color: skyblue;
+}
+.driver-content .content-status ul li:nth-child(4){
+    background-color: green;
+}
+.driver-content .content-status ul li:nth-child(5){
+    background-color: red;
+}
+
+.driver-content .content-status ul li:nth-child(6) button{
+    border-radius: 10px;
+    color: white;
+    padding: 10px 30px;
+    background-color: rgb(30, 96, 218);
+    cursor: pointer;
+}
+
+/* content-container design*/
+.driver-content .content-container{
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: auto;
+}

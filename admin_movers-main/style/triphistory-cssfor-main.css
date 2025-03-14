@@ -1,0 +1,105 @@
+.trip-main-content nav{
+    background-color: white;
+    border-bottom: 1px solid rgba(73, 72, 72, 0.26);
+    display: flex;
+    position: relative;
+}
+
+.trip-main-content nav .log-out{
+    box-sizing: border-box;
+    width: 100px;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    color: black;
+    font-weight: bold;
+}
+
+.trip-main-content nav .log-out i{
+    flex-shrink: 0;
+    font-size: 40px;
+    background: white;
+    padding-left: 40px;
+    cursor: pointer;
+}
+.trip-main-content nav .log-out #toggleBtn{
+    border: none;
+}
+
+.trip-main-content nav .log-out #logout{
+    background: white;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.trip-main-content nav .log-out #logout p:hover{
+    opacity: 70%;
+}
+
+.trip-main-content nav .log-out #logout a{
+    color: black;
+}
+
+.hidden{
+    display: none;
+    padding-left: 15px;
+}
+
+.trip-main-content nav .logo-nav-container{
+    display: none;
+}
+
+.trip-main-content nav .leftbar{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.trip-main-content nav .leftbar i{
+    color: black;
+    flex-shrink: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.trip-main-content nav .leftbar a,
+.trip-main-content nav .leftbar i,
+.trip-main-content nav .leftbar span{
+    padding-left: 10px;
+}
+
+.trip-main-content nav .rightbar{
+    width: 50%;
+}
+
+.trip-main-content nav .leftbar span{
+    color: black;
+}
+
+.trip-main-content nav .leftbar button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.trip-main-content nav .leftbar button:hover{
+    background-color: rgb(170, 173, 175);
+}
+
+.trip-main-content nav .leftbar button i{
+    padding-right: 10px;
+}

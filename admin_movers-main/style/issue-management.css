@@ -1,0 +1,379 @@
+/*-------- issue management start ------------*/
+
+.issue-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+
+    overflow: auto;
+    color: black;
+}
+
+.issue-dashboard{
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+
+    color: black;
+}
+
+.issue-dashboard .box:nth-child(1){
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.issue-dashboard .box:nth-child(1) .card{
+    width: 200px;
+    height: 130px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.issue-dashboard .box:nth-child(1) .card ul li:nth-child(1) h1{
+    font-size: 27px;
+}
+
+.issue-dashboard .box:nth-child(2){
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.issue-dashboard .box:nth-child(2) .card{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.issue-dashboard .box:nth-child(3){
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .top{
+    width: 100%;
+    height: 50px;
+
+    background-color: white;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom{
+    box-sizing: border-box;
+    width: 100%;
+    height: 590px;
+
+    background-color: white;
+    overflow: auto;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom2{
+    box-sizing: border-box;
+    width: 100%;
+    height: 590px;
+
+    background-color: white;
+    overflow: auto;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom3{
+    box-sizing: border-box;
+    width: 100%;
+    height: 590px;
+
+    background-color: white;
+    overflow: auto;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 97%;
+    height: 20px;
+    padding: 10px 20px 0 10px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .header ul:nth-child(1){
+    width: 50%;
+    text-align: left;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .header ul:nth-child(2){
+    display: flex;
+    justify-content: flex-end;
+    gap: 70px;
+    width: 50%;
+    margin-right: 10px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom li{
+    font-weight: bold;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(2) li:nth-child(2){
+    color: rgb(60, 60, 60);
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem{
+    box-sizing: border-box;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(1){
+    height: 100%;
+    border-radius: 10px;
+}
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(2){
+    width: 250px;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(2) i {
+    font-size: 20px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(3){
+    width: 130px;
+}
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(4){
+    width: 110px;
+}
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(5){
+    width: 80px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(5) button{
+    background-color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom .problem ul:nth-child(5) button i{
+    font-size: 28px;
+}
+.issue-dashboard .box:nth-child(3) .issue-container .bottom2{
+    width: 100%;
+    height: 590px;
+}
+
+.issue-dashboard .box:nth-child(3) .issue-container .bottom3{
+    width: 100%;
+    height: 590px;
+}
+
+.issue-content .right-sidebar{
+    box-sizing: border-box;
+    min-width: 280px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0;
+}
+
+/*-------- start issue management right side notification ------------*/
+
+.issue-content .right-sidebar .activity{
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+
+    background-color: white;
+
+
+}
+
+.issue-content .right-sidebar .activity .top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+.issue-content .right-sidebar .activity .top h1{
+    font-size: 20px;
+}
+
+/*-------- end issue management right side notification activity ------------*/
+
+
+/*-------- issue management right side notification all-report------------*/
+.issue-content .right-sidebar .all-report{
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 50px 1fr 70px;
+
+    background-color: white;
+}
+
+.issue-content .right-sidebar .all-report .top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+.issue-content .right-sidebar .all-report .top h1{
+    font-size: 18px;
+}
+
+.issue-content .right-sidebar .all-report .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.issue-content .right-sidebar .all-report .footer .box{
+    width: 120px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.issue-content .right-sidebar .all-report .footer .box span{
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+/*-------- end issue management right side notification all-report------------*/
+
+.issue-container .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.issue-container .top .left{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    width: 100%;
+}
+
+.issue-container .top .left button{
+    border: none;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+}
+
+.issue-container .top .right button{
+    width: 120px;
+    border: none;
+    box-sizing: border-box;
+    background-color: rgb(219 234 254);
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.issue-container .top .left button:hover{
+    font-weight: bold;
+}
+
+.issue-container .top .right button:hover{
+    background-color: rgb(19, 93, 212);
+    color: white;
+}
+
+@media  only screen and (max-width: 942px){
+}
+
+@media  only screen and (max-width: 660px){
+}
+
+@media  only screen and (max-width: 568px){
+}
+
+@media  only screen and (max-width: 475px){
+    .issue-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+@media  only screen and (max-width: 375px){
+}

@@ -1,0 +1,50 @@
+.trip-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    color: black;
+    overflow: auto;
+}
+
+.trip-content .trip-history{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trip-content .trip-history .trip-title-history{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.trip-content .trip-history .trip-container{
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+
+    overflow: auto;
+}
+
+.trip-content .trip-history .trip-container table{
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.trip-content .trip-history .trip-container table tr td{
+    padding: 10px 15px;
+}

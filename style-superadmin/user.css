@@ -1,0 +1,43 @@
+
+.user-container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(1, 120px) 1fr;
+    padding:20px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+ }
+
+ .user-container > div{
+    display: grid;
+    width: 100%;
+    display: flex;
+ }
+
+ .user-container > div:nth-child(1){
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .user-container > div:nth-child(1) #openModal{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 0 2px rgba(128, 128, 128, 0.379);
+    cursor: pointer;
+ }
+
+ #userTable_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+ }
+
+ #userTable_filter label input{
+    border: none;
+    box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.466);
+    margin: 10px 5px;
+    padding: 10px 30px;
+    outline: none;
+    box-sizing: border-box;
+ }

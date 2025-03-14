@@ -1,0 +1,45 @@
+.legal-container{
+    min-height: 100vh;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.legal-container .card-container{
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.legal-container .card-container .card{
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(128, 128, 128, 0.171);
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+
+.legal-container .card-container .card ul{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.legal-container .card-container .card ul li{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.legal-container .card-container .legal-graph{
+    margin-top: 50px;
+    width: 100%;
+}

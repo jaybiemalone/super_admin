@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=search");
+@import url(dashboard.css);
+@import url(sidebar.css);
+@import url(navbar.css);
+@import url(trips.css);
+@import url(upcoming.css);
+@import url(triphistory.css);
+@import url(crud-trips_history.css);
+@import url(login.css);
+@import url(legal.css);
+@import url(sidebar2.css);
+@import url(monitoring.css);
+@import url(passenger-monitoring.css);
+@import url(user-content.css);
+@import url(facility.css);
+@import url(document.css);
+@import url(driver-monitor.css);
+@import url(contract-management.css);
+@import url(issue-management.css);
+@import url(request-management.css);
+@import url(inbox-management.css);
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Lexend", sans-serif;
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    color: white;
+}
+
+li{
+    list-style: none;
+}
+
+h1{
+    font-size: 18px;
+}
+
+.main-content{
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(219 234 254);
+    align-items: flex-start;
+
+    overflow: auto;
+    animation: ease-in 1s;
+}
+.main-content::-webkit-scrollbar{
+    display: none;
+}
+
+@media  only screen and (max-width: 942px){
+
+}
+@media  only screen and (max-width: 660px){
+    .main-content{
+        padding-top: 50px;
+        width: 100vw;
+        position: absolute;
+    }
+}
+@media  only screen and (max-width: 568px){
+}
+
+@media  only screen and (max-width: 475px){
+
+}
+@media  only screen and (max-width: 375px){
+
+}
+
+/* @media  only screen and (max-width: 942px){
+}
+
+@media  only screen and (max-width: 660px){
+}
+
+@media  only screen and (max-width: 568px){
+}
+
+@media  only screen and (max-width: 475px){
+}
+
+@media  only screen and (max-width: 375px){
+} */

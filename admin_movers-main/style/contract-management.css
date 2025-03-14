@@ -1,0 +1,146 @@
+.contract-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contract-container{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.contract-catigories{
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+
+    background-color: rgb(219 234 254);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contract-catigories .process{
+    display: flex;
+    gap: 20px;
+}
+
+.contract-catigories .process button,
+.contract-catigories .add-contract button{
+    border: none;
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.763);
+    cursor: pointer;
+
+    background-color: white;
+}
+
+.contract-catigories .process button:hover,
+.contract-catigories .add-contract button:hover{
+    background-color: rgba(85, 159, 255, 0.484);
+}
+
+/*contract-search*/
+
+.contract-search{
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.contract-search .box{
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contract-search .box:nth-child(1){
+    color: black;
+    justify-content: flex-start;
+}
+.contract-search .box:nth-child(1) h1{
+    font-size: 18px;
+}
+
+.contract-search .box:nth-child(2) input{
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid grey;
+
+    outline: none;
+}
+
+.contract-search .box:nth-child(3){
+    justify-content: flex-start;
+    color: black;
+    gap: 20px;
+}
+
+.contract-search .box:nth-child(3) .select{
+    border: 1px solid rgb(114, 114, 114);
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.contract-search .box:nth-child(3) .select label{
+    color: grey
+}
+
+.contract-search .box:nth-child(3) select{
+    border: none;
+    outline: none;
+}
+
+.contract-search .box:nth-child(4){
+    justify-content: flex-start;
+    position: relative;
+}
+
+.contract-search .box:nth-child(4) span{
+    position: absolute;
+    width: 96%;
+    height: 2px;
+    margin-bottom: 35px;
+    border-top: 1px solid grey;
+}
+
+.contract-search .box:nth-child(4) .checkbox{
+    display: flex;
+    padding: 0 20px;
+    gap: 10px;
+    color: black;
+}
+
+.contract-search .box:nth-child(4) .checkbox label{
+    font-size: 15px;
+}
+
+.contract-progress{
+    width: 100%;
+    height: 500px;
+    
+    background-color: white;
+}

@@ -1,0 +1,181 @@
+/*Left Sidebar*/
+
+.main-content nav{
+    background-color: white;
+    border-bottom: 1px solid rgba(73, 72, 72, 0.26);
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: 50px;
+}
+
+.main-content nav .log-out{
+    box-sizing: border-box;
+    width: 100px;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    color: black;
+    font-weight: bold;
+}
+
+.main-content nav .log-out i{
+    flex-shrink: 0;
+    font-size: 40px;
+    background: white;
+    cursor: pointer;
+}
+.main-content nav .log-out #toggleBtn{
+    width: 100%;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content nav .log-out #logout{
+    box-sizing: border-box;
+    background: white;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 6px 15px;
+}
+
+.main-content nav .log-out #logout p:hover{
+    opacity: 70%;
+}
+
+.main-content nav .log-out #logout a{
+    color: black;
+}
+
+.hidden{
+    display: none;
+}
+
+.main-content nav .logo-nav-container{
+    display: none;
+}
+
+.main-content nav .leftbar{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.main-content nav .leftbar i{
+    color: black;
+    flex-shrink: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-content nav .leftbar a,
+.main-content nav .leftbar i,
+.main-content nav .leftbar span{
+    padding-left: 10px;
+}
+
+.main-content nav .rightbar{
+    width: 50%;
+}
+
+.main-content nav .leftbar span{
+    color: black;
+}
+
+.main-content nav .leftbar button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.main-content nav .leftbar button:hover{
+    background-color: rgb(170, 173, 175);
+}
+
+.main-content nav .leftbar button i{
+    padding-right: 10px;
+}
+
+/*active-nav*/
+
+.active-nav span{
+    background-color: black;
+    color: white !important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media  only screen and (max-width: 942px){
+    .main-content nav .leftbar,
+    .main-content nav .rightbar{
+        display: none;
+    }
+}
+
+@media  only screen and (max-width: 660px){
+    .main-content nav{
+        z-index: 1;
+        width: 100%;
+        border: none;
+        position: fixed;
+    }
+    .main-content nav .log-out{
+        display: none;
+    }
+    .main-content nav .display-menu button{
+        display: block !important;
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+        border: none;
+        background: none;
+        font-size: 28px;
+        cursor: pointer;
+    }
+    .main-content nav .display-menu button:hover{
+        opacity: 60%;
+    }
+
+    .main-content nav .logo-nav-container{
+        display: flex;
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+
+@media  only screen and (max-width: 568px){
+    .main-content nav{
+        width: 100vw;
+    }
+}
+
+@media  only screen and (max-width: 375px){
+    .sidebar ul li .Logo{
+        display: none;
+    }
+
+    .sidebar{
+        padding-top: 80px;
+    }
+}

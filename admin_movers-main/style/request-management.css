@@ -1,0 +1,189 @@
+.request-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 10px 20px;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+}
+
+.request-content .top{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.request-content .top .box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.request-content .top .box .request-name h1{
+    font-size: 18px;
+}
+
+.request-content .top .box .button{
+    height: 100%;
+    width: 320px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.request-content .top .box .button input{
+    border: none;
+    background: rgb(225, 224, 224);
+    height: 30px;
+    width: 170px;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 10px;
+}
+
+.request-content .top .box .button span{
+    padding-right: 20px;
+}
+
+.request-content .top .box .button button{
+    border: none;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    background-color: rgb(71, 129, 235);
+    color: white;
+}
+
+.request-content .bottom{
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.request-content .bottom .box:nth-child(1){
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.request-content .bottom .box:nth-child(1) .card{
+    background-color: white;
+    border-radius: 10px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.request-content .bottom .box:nth-child(2){
+    width: 100%;
+    height: auto;
+    padding: 40px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box{
+    width: 250px;
+    height: 270px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px 0px;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box ul:nth-child(1){
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box ul:nth-child(1) li{
+    background-color: rgb(37, 128, 233);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box ul:nth-child(2) li{
+    font-weight: bold;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box ul:nth-child(3) li{
+    color: grey;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box ul:nth-child(6) li button{
+    border: none;
+    padding: 10px 20px;
+    background-color: rgb(37, 128, 233);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.request-content .bottom .box:nth-child(2) .request-box ul:nth-child(6) li button:hover{
+    background-color: green;
+}
+
+
+
+@media  only screen and (max-width: 942px){
+    .request-content .bottom .box:nth-child(2){
+        justify-content: center;
+    }
+}
+
+@media  only screen and (max-width: 660px){
+}
+
+@media  only screen and (max-width: 568px){
+}
+
+@media  only screen and (max-width: 475px){
+}
+
+@media  only screen and (max-width: 375px){
+}

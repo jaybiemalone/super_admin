@@ -1,0 +1,152 @@
+.inbox-content{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    color: black;
+}
+
+.inbox-content h1{
+    font-size: 25px;
+}
+
+.inbox-content h2{
+    font-size: 15px;
+}
+
+.inbox-content .message-inbox{
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    background-color: white;
+
+    overflow: auto;
+}
+
+.inbox-content .message-inbox .top{
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+.inbox-content .message-inbox .top h1{
+    display: flex;
+    align-items: center;
+}
+
+.inbox-content .message-inbox .top span{
+    display: block;
+    display: flex;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(116, 112, 112, 0.493);
+    border-radius: 50%;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.inbox-content .message-inbox .body{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0 10px 0 5px;
+}
+
+.inbox-content .message-inbox .body .close-button{
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    background-color: rgba(128, 128, 128, 0.107);
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inbox-content .message-inbox .body .close-button ul{
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+}
+
+.inbox-content .message-inbox .body .close-button ul:nth-child(3){
+    justify-content: space-around;
+}
+
+.inbox-content .message-inbox .body .close-button ul:nth-child(2){
+    flex-direction: column;
+}
+
+.inbox-content .message-inbox .body .close-button ul:nth-child(3) li{
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding: 5px 10px;
+}
+
+.inbox-content .message-inbox .body .close-button ul:nth-child(3) li:nth-child(1){
+    color: rgb(202, 2, 202);
+    background-color: rgba(149, 8, 149, 0.29);
+}
+
+.inbox-content .message-display{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.inbox-content .message-display .ibox-modal-content{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(128, 128, 128, 0.226);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.inbox-content .message-display .ibox-modal-content .send-feedback{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 70px;
+}
+
+.inbox-content .message-display .ibox-modal-content .send-feedback textarea{
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.inbox-content .message-display .ibox-modal-content .send-feedback button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(11, 86, 172);
+}
