@@ -3,6 +3,7 @@
 @import url(/style-superadmin/user.css);
 @import url(/style-superadmin/legal.css);
 @import url(/style-superadmin/compliance.css);
+@import url(/style-superadmin/announcement.css);
 
 :root{
   --base-clr: #ffffff;
