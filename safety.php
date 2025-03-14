@@ -387,7 +387,7 @@ input, select, textarea {
             </div>
         </div>
 
-        <!-- Contact Modal  -->
+        <!-- Contact Modal -->
         <div id="contact-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('contact-modal')">&times;</span>
