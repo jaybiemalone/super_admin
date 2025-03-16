@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_name'])) {
   <nav id="sidebar">
     <ul>
       <li>
-        <span class="logo">Movers</span>
+        <span class="logo"><img src="./Asset/logo.png" alt="" width="150"></span>
         <button onclick=toggleSidebar() id="toggle-btn">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
         </button>
@@ -55,6 +55,8 @@ if (!isset($_SESSION['user_name'])) {
             <li><a href="compliance.php">vehicle <br> compliance</a></li>
             <li><a href="safety.php">Accident <br> Management</a></li>
             <li><a href="inbox.php">Inbox</a></li>
+            <li><a href="complaint.php">Complaint <br> Management</a></li>
+            <li><a href="cfsurvey.php">Customer Feedback <br> Survey</a></li>
           </div>
         </ul>
       </li>
@@ -67,7 +69,7 @@ if (!isset($_SESSION['user_name'])) {
       <li>
         <a href="profile.php">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-40q0-17 11.5-28.5T280-880q17 0 28.5 11.5T320-840v40h320v-40q0-17 11.5-28.5T680-880q17 0 28.5 11.5T720-840v40h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
-          <span>callendar</span>
+          <span>Announcement</span>
         </a>
       </li>
       <li>
@@ -133,7 +135,7 @@ if (!isset($_SESSION['user_name'])) {
             <div class="card">
               <ul>
                 <li><img src="./icons/shield.png" alt="Loud Speaker Icon" width="40"></li>
-                <li><h2>Total Complaints</h2></li>
+                <li><h2>compliance Rate</h2></li>
                 <li><span>#</span></li>
                 <li>Date</li>
               </ul>
@@ -141,7 +143,7 @@ if (!isset($_SESSION['user_name'])) {
             <div class="card">
               <ul>
                 <li><img src="./icons/alarm.png" alt="Loud Speaker Icon" width="40"></li>
-                <li><h2>Total Complaints</h2></li>
+                <li><h2>Recent incidents</h2></li>
                 <li><span>#</span></li>
                 <li>Date</li>
               </ul>
@@ -165,6 +167,7 @@ if (!isset($_SESSION['user_name'])) {
 
         </div>
     </div>
+    <footer></footer>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -90,12 +90,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="style_user_level.css">
+    <link rel="icon" href="/asset/favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            background: url(./asset/loginbackground.png );
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
 
 <div class="form-container">
     <form action="" method="post">
-        <h3>Login Now</h3>
+        <h3><img src="./asset/logo.png" alt="" width="250">Login Now</h3>
         <?php if (!empty($error)) : ?>
             <p style="color: red; font-weight: bold;"><?php echo $error; ?></p>
         <?php endif; ?>

@@ -6,6 +6,9 @@
     padding:20px;
     padding-bottom: 60px;
     box-sizing: border-box;
+    box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.158);
+    border-radius: 10px;
+    align-items: start;
  }
 
  .user-container > div{

@@ -15,12 +15,14 @@ if (!isset($_SESSION['user_name'])) {
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="/admin_movers-main/Asset/favicon.ico" type="image/x-icon">
   <script type="text/javascript" src="app.js" defer></script>
+  <link rel="icon" href="/asset/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <nav id="sidebar">
     <ul>
       <li>
-        <span class="logo">Movers</span>
+        <span class="logo"><img src="./Asset/logo.png" alt="" width="150"></span>
         <button onclick=toggleSidebar() id="toggle-btn">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
         </button>
@@ -55,6 +57,8 @@ if (!isset($_SESSION['user_name'])) {
             <li><a href="compliance.php">vehicle <br> compliance</a></li>
             <li><a href="safety.php">Accident <br> Management</a></li>
             <li class="active"><a href="inbox.php">Inbox</a></li>
+            <li><a href="complaint.php">Complaint <br> Management</a></li>
+            <li><a href="cfsurvey.php">Customer Feedback <br> Survey</a></li>
           </div>
         </ul>
       </li>
@@ -118,11 +122,22 @@ if (!isset($_SESSION['user_name'])) {
     </ul>
   </nav>
   <main>
-    <div class="container">
-    </div>
-    <div class="container">
-    </div>
-    <div class="container">
+    <div class="inbox-container">
+      <div class="box">
+        <div class="head">
+          <button>Todo</button>
+          <button>In progress</button>
+          <button>Done</button>
+        </div>
+        <div class="body">
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Search">
+          </div>
+          <div class="chat-container"></div>
+        </div>
+      </div>
+      <div class="box"></div>
     </div>
   </main>
 </body>

@@ -14,9 +14,7 @@ if (!isset($_SESSION['user_name'])) {
   <title>Movers.com</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="/admin_movers-main/Asset/favicon.ico" type="image/x-icon">
-  <script type="text/javascript" src="app.js" defer>
-  <link rel="icon" href="/asset/favicon.ico" type="image/x-icon">
-  </script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="text/javascript" src="app.js" defer></script>
 </head>
 <body>
   <nav id="sidebar">
@@ -41,7 +39,7 @@ if (!isset($_SESSION['user_name'])) {
         </button>
         <ul class="sub-menu">
           <div>
-            <li><a href="file.php">Folder</a></li>
+            <li class="active"><a href="file.php">Folder</a></li>
           </div>
         </ul>
       </li>
@@ -58,6 +56,7 @@ if (!isset($_SESSION['user_name'])) {
             <li><a href="safety.php">Accident <br> Management</a></li>
             <li><a href="inbox.php">Inbox</a></li>
             <li><a href="complaint.php">Complaint <br> Management</a></li>
+            <li><a href="cfsurvey.php">Customer Feedback <br> Survey</a></li>
           </div>
         </ul>
       </li>
@@ -67,7 +66,7 @@ if (!isset($_SESSION['user_name'])) {
           <span>User</span>
         </a>
       </li>
-      <li class="active">
+      <li>
         <a href="announcement.php">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-40q0-17 11.5-28.5T280-880q17 0 28.5 11.5T320-840v40h320v-40q0-17 11.5-28.5T680-880q17 0 28.5 11.5T720-840v40h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
           <span>Announcement</span>
@@ -121,18 +120,11 @@ if (!isset($_SESSION['user_name'])) {
     </ul>
   </nav>
   <main>
-    <div class="announce-container">
-      <div class="head">
-        <div class="header">
-        <i class="fa-solid fa-bullhorn"></i> <h1>Announcement</h1>
-        </div>
-        <div class="announce">
-        <i class="fa-regular fa-bell"></i> <button><i class="fa-regular fa-plus" style="color: #63E6BE;"></i> Add Announcement</button>
-        </div>
-        <div class="footer">
-
-        </div>
-      </div>
+    <div class="container">
+    </div>
+    <div class="container">
+    </div>
+    <div class="container">
     </div>
   </main>
 </body>

@@ -1,5 +1,6 @@
 .announce-container{
     height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -10,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
     background: rgb(35,27,181);
     background: linear-gradient(90deg, rgba(35,27,181,1) 0%, rgba(35,134,212,1) 43%, rgba(36,138,218,1) 100%, rgba(0,212,255,1) 100%);
     gap: 10px;

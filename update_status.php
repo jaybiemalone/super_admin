@@ -21,4 +21,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_id'], $_POST['new
 } else {
     echo "Invalid request!";
 }
+
 ?>

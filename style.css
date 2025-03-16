@@ -4,6 +4,7 @@
 @import url(/style-superadmin/legal.css);
 @import url(/style-superadmin/compliance.css);
 @import url(/style-superadmin/announcement.css);
+@import url(/style-superadmin/inbox.css);
 
 :root{
   --base-clr: #ffffff;
@@ -18,6 +19,63 @@
   margin: 0;
   padding: 0;
 }
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#userTable_wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* Table Styling */
+.table-container {
+width: 100%;
+overflow-x: auto; /* Ensures responsiveness */
+}
+
+table {
+box-shadow: 0 0 0 2px rgba(128, 128, 128, 0.288);
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+background: #fff;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+padding: 12px 15px;
+text-align: left;
+}
+
+th {
+background-color: #007bff;
+color: white;
+text-transform: uppercase;
+}
+
+td {
+border-bottom: 1px solid #ddd;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+background-color: #f9f9f9;
+}
+
+/* Hover effect */
+tbody tr:hover {
+background-color: #f1f1f1;
+cursor: pointer;
+}
+
 html{
   font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
@@ -25,7 +83,6 @@ html{
 body{
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: var(--base-clr);
   color: var(--text-clr);
   display: grid;
   grid-template-columns: auto 1fr;
