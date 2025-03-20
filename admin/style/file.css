@@ -1,0 +1,71 @@
+.document-upload{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.258);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.document-upload form ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.file-content{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.258);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .modal-content h2{
+    padding: 10px;
+  }
+  
+  .modal-content p span{
+    display: block;
+    padding: 20px;
+    box-shadow: 0 0 0 5px rgba(128, 128, 128, 0.237);
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input, textarea, select {
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
