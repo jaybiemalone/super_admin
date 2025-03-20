@@ -1,0 +1,64 @@
+.inbox-container {
+    box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.158);
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+}
+
+.inbox-container .box:nth-child(1){
+    height: 100%;
+    width: 30%;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    box-sizing: border-box;
+}
+
+.inbox-container .box:nth-child(1) .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.inbox-container .box:nth-child(1) .head button{
+    border: none;
+    background: none;
+    padding: 10px;
+    height: 100%;
+    cursor: pointer;
+    width: 100%;
+}
+
+.inbox-container .box:nth-child(1) .head button:hover{
+    border-bottom: 2px solid rgb(107, 116, 245);
+}
+
+.inbox-container .box:nth-child(1) .body{
+    display: grid;
+    grid-template-rows: 70px 1fr;
+}
+
+.inbox-container .box:nth-child(1) .body .search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inbox-container .box:nth-child(1) .body .search i {
+    color: gray;
+    font-size: 25px;
+}
+
+.inbox-container .box:nth-child(1) .body .search input{
+    border: none;
+    box-shadow: 0 0 0 2px rgba(128, 128, 128, 0.379);
+    border-radius: 20px;
+    padding: 7px 10px;
+    padding-left: 30px; /* Space for the icon */
+    height: 35px;
+    font-size: 16px;
+}

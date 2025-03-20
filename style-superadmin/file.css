@@ -1,0 +1,26 @@
+.document-upload{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.258);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.document-upload form ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.file-content{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.258);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
