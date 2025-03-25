@@ -6,6 +6,9 @@
 @import url(/style-superadmin/announcement.css);
 @import url(/style-superadmin/inbox.css);
 @import url(/style-superadmin/file.css);
+@import url(/style-superadmin/header.css);
+@import url(/style-superadmin/maintenance.css);
+
 :root{
   --base-clr: #ffffff;
   --line-clr: #96969b;
@@ -91,6 +94,7 @@ background: #fff;
 border-radius: 10px;
 overflow: hidden;
 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+font-size: 15px;
 }
 
 th, td {

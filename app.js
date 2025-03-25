@@ -58,3 +58,19 @@ function closeModal(event) {
   event.preventDefault(); // Prevents navigation
   document.getElementById('passwordModall').style.display = 'none';
 }
+
+
+
+// logout modal
+
+function openLogout() {
+  document.getElementById('modal-logout').classList.remove('hidden');
+}
+
+function logoutClose() {
+  document.getElementById('modal-logout').classList.add('hidden');
+}
+
+function confirmLogout() {
+  window.location.href = 'logout.php';
+}

@@ -1,0 +1,42 @@
+header{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px 0;
+    box-shadow: 0 0 5px black;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+header div button{
+    box-sizing: border-box;
+    background: none;
+    color: black;
+}
+
+header div button:hover{
+    background-color: whitesmoke;
+}
+
+header div button i{
+    color: black;
+}
+
+#logout {
+    position: absolute; /* Or absolute if preferred */
+    right: 0;
+    top: 70px;
+    left: 90%;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0px 8px rgba(0,0,0,0.1);
+    border: none;
+  }
+  
+  
