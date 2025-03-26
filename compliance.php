@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
   $notes = $conn->real_escape_string($_POST['notes']);
   $status = $conn->real_escape_string($_POST['status']);
 
-  // ✅ CHECK IF THE PLATE NUMBER ALREADY EXISTS
+  // ✅ CHECK IF THE PLATE NUMBER ALREADY EXISTS haha
   $check_sql = "SELECT * FROM compliance_data WHERE plate_number = '$plate_number'";
   $result = $conn->query($check_sql);
 
