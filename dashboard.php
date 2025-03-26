@@ -1,5 +1,6 @@
 <?php
 @include 'config.php';
+@include 'count.php';
 
 session_start();
 if (!isset($_SESSION['user_name'])) {
@@ -7,37 +8,40 @@ if (!isset($_SESSION['user_name'])) {
   exit();
 }
 
-// Fetch data
-$sql = "SELECT * FROM active_users";
-$result = $conn->query($sql);
+// Accident Reports Data
+$accidentData = $conn->query("SELECT COUNT(*) as count FROM accident_reports")->fetch_assoc()['count'];
 
-$emailAccounts = 67550;
-$emailAccountPercentage = 80;
-$requestAccounts = 67550;
-$requestPercentage = 34;
+// Compliance Data
+$complianceData = $conn->query("SELECT LOWER(status) as status, COUNT(*) as count FROM compliance_data GROUP BY LOWER(status)");
+$compliance = ["compliance" => 0, "non-compliance" => 0, "pending" => 0];
 
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    if ($row['type'] === 'Email Account') {
-      $emailAccounts = $row['count'];
-      $emailAccountPercentage = $row['percentage'];
-    } elseif ($row['type'] === 'Requests') {
-      $requestAccounts = $row['count'];
-      $requestPercentage = $row['percentage'];
-    }
+while ($row = $complianceData->fetch_assoc()) {
+  $status = strtolower($row['status']);
+  if ($status === 'compliant') {
+    $compliance['compliance'] = $row['count'];
+  } elseif ($status === 'non-compliant') {
+    $compliance['non-compliance'] = $row['count'];
+  } elseif ($status === 'pending') {
+    $compliance['pending'] = $row['count'];
   }
 }
 
-// SQL query to count rows from the maintenance table
-$sql = "SELECT COUNT(*) AS total FROM maintenance";
-$result = $conn->query($sql);
+// Complaints Data (Ensure aggregation)
+$complaintsData = $conn->query("SELECT DATE(date_submitted) as date_submitted, COUNT(*) as count FROM complaints GROUP BY DATE(date_submitted)");
+$dates = [];
+$counts = [];
 
-// Fetch result
-if ($result->num_rows > 0) {
-  $row = $result->fetch_assoc();
-  $total = $row['total'];
-} else {
-  $total = 0;
+while ($row = $complaintsData->fetch_assoc()) {
+  $dates[] = $row['date_submitted'];
+  $counts[] = (int) $row['count']; // Convert count to integer for proper graph plotting
+}
+
+// Maintenance Data
+$maintenanceData = $conn->query("SELECT COUNT(*) as count, status FROM maintenance GROUP BY status");
+$maintenance = ["pending" => 0, "on-going" => 0, "resolve" => 0];
+
+while ($row = $maintenanceData->fetch_assoc()) {
+  $maintenance[strtolower($row['status'])] = $row['count'];
 }
 
 $conn->close();
@@ -58,67 +62,8 @@ $conn->close();
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <style>
-    .dashboard-container .box:nth-child(7) {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .box:nth-child(7) {
-      border-radius: 10px;
-      padding: 20px;
-      width: 350px;
-    }
-
-    .chart-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 8px;
-      background-color: #ddd;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: 5px;
-    }
-
-    .bar-fill {
-      height: 100%;
-      border-radius: 4px;
-    }
-
-    .bar-email {
-      background-color: purple;
-      width:
-        <?php echo $emailAccountPercentage; ?>
-        %;
-    }
-
-    .bar-request {
-      background-color: green;
-      width:
-        <?php echo $requestPercentage; ?>
-        %;
-    }
-
-    .label {
-      font-size: 14px;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .percent-value {
-      float: right;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -292,151 +237,29 @@ $conn->close();
       <i class="fa-solid fa-house-chimney"></i>
       <h1>Dashboard</h1>
     </div>
-    <div class="dashboard-container">
-      <div class="box">
-        <ul>
-          <li>Total Completions</li>
-          <li><img src="./icons/pie.gif" alt="" width="50">Total Balance <span>Aug 18 2018</span></li>
-          <li>$13,750</li>
-          <li>
-            <p><span>This Week</span>234 <span>36%</span></p>
-          </li>
-          <li></li>
-        </ul>
-      </div>
-      <div class="box">
-        <ul>
-          <li>Completion rate</li>
-          <li><img src="./icons/pie.gif" alt="" width="50">Credit Available <span>Sep 12 2018</span></li>
-          <li>$8,345</li>
-          <li>
-            <p><span>This Week</span>$3487 <span>44%</span></p>
-          </li>
-          <li></li>
-        </ul>
-      </div>
-      <div class="box">
-        <ul>
-          <li>
-            <p>Total Expenses</p>
-          </li>
-          <li>
-            <p>$65, 650 <span>+876</span></p>
-          </li>
-          <li>
-            <p>view statement</p>
-          </li>
-          <li><img src="./icons/growth.gif" alt="" width="50"></li>
-        </ul>
-      </div>
-      <div class="box">
-        <ul>
-          <li>
-            <p>Total Invoice</p>
-          </li>
-          <li>
-            <p>$65, 650 <span>+876</span></p>
-          </li>
-          <li>
-            <p>view statement</p>
-          </li>
-          <li><img src="./icons/growth.gif" alt="" width="50"></li>
-        </ul>
-      </div>
-      <div class="box">
-        <ul>
-          <li>
-            <p>Amount Due</p>
-          </li>
-          <li>
-            <p>$65, 650 <span>+876</span></p>
-          </li>
-          <li>
-            <p>view statement</p>
-          </li>
-          <li><img src="./icons/growth.gif" alt="" width="50"></li>
-        </ul>
-      </div>
-      <div class="box">
-        <ul>
-          <li>
-            <p>Unpaid Invoice</p>
-          </li>
-          <li>
-            <p>$65, 650 <span>+876</span></p>
-          </li>
-          <li>
-            <p>view statement</p>
-          </li>
-          <li><img src="./icons/growth.gif" alt="" width="50"></li>
-        </ul>
-      </div>
-      <div class="box">
-        <h2>Active Users</h2>
-        <div class="chart-container">
-          <div>
-            <div class="label">
-              <?php echo number_format($emailAccounts); ?> Email account &nbsp;
-              <span class="percent-value"><?php echo $emailAccountPercentage; ?>%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="bar-fill bar-email"></div>
-            </div>
-          </div>
+
+    <div class="dashboard-content">
+      <div class="dashboard-barchar">
+        <div class="graph">
+          <h4>Accident Reports</h4>
+          <canvas id="circleGraph"></canvas>
         </div>
 
-        <div class="chart-container">
-          <div>
-            <div class="label">
-              <?php echo number_format($requestAccounts); ?> Requests &nbsp;
-              <span class="percent-value"><?php echo $requestPercentage; ?>%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="bar-fill bar-request"></div>
-            </div>
-          </div>
+        <div class="graph">
+          <h4>Compliance Data</h4>
+          <canvas id="barGraphCompliance"></canvas>
+        </div>
+
+        <div class="graph">
+          <h4>Complaints Over Time</h4>
+          <canvas id="lineGraph"></canvas>
+        </div>
+
+        <div class="graph">
+          <h4>Maintenance Status</h4>
+          <canvas id="barGraphMaintenance"></canvas>
         </div>
       </div>
-      <div class="box">
-        <ul>
-          <li>
-            <p>Amount Due</p>
-          </li>
-          <li>
-            <p>$5998</p><span>Milestone Completed</span>
-          </li>
-          <li>
-            <p>Payment for next week</p>
-          </li>
-        </ul>
-        <ul>
-        </ul>
-      </div>
-      <div class="box">
-        <ul>
-          <li>Realtime Statistics</li>
-          <li></li>
-        </ul>
-        <ul>
-          <li>Updated at 08:32pm, Aug 2018</li>
-          <li>Overview Status</li>
-          <ul>
-            <li>
-              <p>Marketing <span>2018</span></p>
-              <p>34% <span>Mar</span></p>
-            </li>
-            <li>
-              <p>Marketing <span>2018</span></p>
-              <p>34% <span>Mar</span></p>
-            </li>
-            <li>
-              <p>Marketing <span>2018</span></p>
-              <p>34% <span>Mar</span></p>
-            </li>
-          </ul>
-        </ul>
-      </div>
-      <div class="box"></div>
     </div>
 
     <div id="passwordModall"
@@ -469,8 +292,95 @@ $conn->close();
         </div>
       </div>
     </div>
-
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js">
+
+  </script>
+  <script>
+    // Circle Graph (Accident Reports)
+    const circleCtx = document.getElementById('circleGraph').getContext('2d');
+    new Chart(circleCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Accident Reports'],
+        datasets: [{
+          data: [<?php echo $accidentData; ?>],
+          backgroundColor: ['#FF6384'],
+        }],
+      },
+    });
+
+    // Bar Graph (Compliance Data)
+    const barCtx = document.getElementById('barGraphCompliance').getContext('2d');
+    new Chart(barCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Compliance', 'Non-Compliance', 'Pending'], // Add "Pending"
+        datasets: [{
+          label: 'Compliance Status',
+          data: [
+            <?php echo $compliance['compliance']; ?>,
+            <?php echo $compliance['non-compliance']; ?>,
+            <?php echo $compliance['pending']; ?> // Add Pending Data
+          ],
+          backgroundColor: ['#36A2EB', '#FF6384', '#FFCD56'], // Add color for "Pending"
+        }],
+      },
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const lineCtx = document.getElementById('lineGraph').getContext('2d');
+      new Chart(lineCtx, {
+        type: 'line',
+        data: {
+          labels: <?php echo json_encode($dates); ?>,
+          datasets: [{
+            label: 'Complaints',
+            data: <?php echo json_encode($counts); ?>,
+            borderColor: '#FF9F40',
+            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Date Submitted'
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Number of Complaints'
+              },
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    });
+
+    // Bar Graph (Maintenance Status)
+    const maintenanceCtx = document.getElementById('barGraphMaintenance').getContext('2d');
+    new Chart(maintenanceCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Pending', 'On-Going', 'Resolve'],
+        datasets: [{
+          label: 'Maintenance Status',
+          data: [<?php echo $maintenance['pending']; ?>, <?php echo $maintenance['on-going']; ?>, <?php echo $maintenance['resolve']; ?>],
+          backgroundColor: ['#FFCD56', '#4BC0C0', '#9966FF'],
+        }],
+      },
+    });
+  </script>
 </body>
 
 </html>

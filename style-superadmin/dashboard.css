@@ -1,12 +1,3 @@
-main{
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-}
-li{
-    list-style: none;
-}
-
 main .header-dashboard{
     width: 100%;
     height: 70px;
@@ -24,249 +15,26 @@ main .header-dashboard{
 main .header-dashboard i{
     font-size: 25px;
 }
-main .dashboard-container{
-    height: 100vh;
+.dashboard-content{
+    width: 100%;
+    height: auto;
+}
+
+/*  bargraph css */
+
+.dashboard-barchar {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-.dashboard-container .box:nth-child(1),
-.dashboard-container .box:nth-child(2){
-    display: block;
-    width: 440px;
-    height: 300px;
-}
-
-.dashboard-container .box{
-    display: block;
-    width: 180px;
-    height: 180px;
-    margin: 10px;
-    padding: 25px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-}
-
-.dashboard-container .box:nth-child(1) ul li,
-.dashboard-container .box:nth-child(2) ul li{
-    list-style: none;
-    width: 50%;
-    margin: 15px 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.dashboard-container .box:nth-child(1) ul li span,
-.dashboard-container .box:nth-child(2) ul li span{
-    color: rgba(108, 105, 105, 0.872);
-    font-size: 15px;
-    margin: 0 5px;
-}
-
-.dashboard-container .box ul{
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-/*Start Style for "Box 1-2" Dashboard*/
-.dashboard-container .box:nth-child(1) ul li:nth-child(1),
-.dashboard-container .box:nth-child(2) ul li:nth-child(1){
-    width: 100%;
-    font-size: 18px;
-}
-
-.dashboard-container .box:nth-child(1) ul li:nth-child(2),
-.dashboard-container .box:nth-child(2) ul li:nth-child(2){
-    width: 60%;
-    font-size: 18px;
-}
-
-.dashboard-container .box:nth-child(1) ul li:nth-child(3),
-.dashboard-container .box:nth-child(2) ul li:nth-child(3){
-    box-sizing: border-box;
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 30px;
-    font-weight: 500;
-    font-size: 34px;
-}
-
-.dashboard-container .box:nth-child(1) ul li:nth-child(4) span,
-.dashboard-container .box:nth-child(2) ul li:nth-child(4) span{
-    font-size: 15px;
-}
-
-.dashboard-container .box:nth-child(1) ul li:nth-child(4) span:nth-child(2),
-.dashboard-container .box:nth-child(2) ul li:nth-child(4) span:nth-child(2){
-    font-size: 22px;
-    color: green;
-}
-
-.dashboard-container .box:nth-child(1) ul li:nth-child(4),
-.dashboard-container .box:nth-child(2) ul li:nth-child(4){
-    box-sizing: border-box;
-    display: flex;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-/*End Style for "Box 1-2" 2 box Dashboard*/
-
-/*Start Style for "Box 3-6" 4 box Dashboard*/
-.dashboard-container .box:nth-child(3),
-.dashboard-container .box:nth-child(4),
-.dashboard-container .box:nth-child(5),
-.dashboard-container .box:nth-child(6){
-    flex-direction: column;
-}
-
-.dashboard-container .box:nth-child(3) ul li:nth-child(3) p,
-.dashboard-container .box:nth-child(4) ul li:nth-child(3) p,
-.dashboard-container .box:nth-child(5) ul li:nth-child(3) p,
-.dashboard-container .box:nth-child(6) ul li:nth-child(3) p{
-    color: rgba(128, 128, 128, 0.795);
-}
-
-.dashboard-container .box:nth-child(3) ul li:nth-child(2) span,
-.dashboard-container .box:nth-child(4) ul li:nth-child(2) span,
-.dashboard-container .box:nth-child(5) ul li:nth-child(2) span,
-.dashboard-container .box:nth-child(6) ul li:nth-child(2) span{
-    color: green;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.dashboard-container .box:nth-child(3) ul li:nth-child(2) p,
-.dashboard-container .box:nth-child(4) ul li:nth-child(2) p,
-.dashboard-container .box:nth-child(5) ul li:nth-child(2) p,
-.dashboard-container .box:nth-child(6) ul li:nth-child(2) p{
-    font-weight: bold;
-    font-size: 22px;
-}
-
-/*End Style for "Box 3-6" Dashboard*/
-
-
-.dashboard-container .box:nth-child(7),
-.dashboard-container .box:nth-child(8){
-    display: block;
-    width: 450px;
-    height: 200px;
-}
-
-/*start Style for "Box 8" Dashboard*/
-
-.dashboard-container .box:nth-child(8){
-    display: flex;
-    flex-direction: row;
-}
-
-.dashboard-container .box:nth-child(8) ul:nth-child(1) li{
-    width: 100%;
-}
-
-.dashboard-container .box:nth-child(8) ul{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.dashboard-container .box:nth-child(8) ul li:nth-child(2){
-    font-size: 33px;
-    color: black;
-}
-
-.dashboard-container .box:nth-child(8) ul li:nth-child(2) span{
-    font-size: 18px;
-    color: rgba(128, 128, 128, 0.845);
-}
-
-
-/*End Style for "Box 8" Dashboard*/
-
-
-/*start Style for "Box 9" Dashboard*/
-
-.dashboard-container .box:nth-child(9){
-    display: flex;
-    width: 600px;
-    height: 300px;
-    box-sizing: border-box;
-    flex-direction: row;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(1){
-    width: 70%;
-    height: 100%;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2){
-    width: 30%;
-    height: 100%;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2) li:nth-child(1){
-    font-size: 10px;
-    color: rgba(128, 128, 128, 0.772);
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2) ul li:nth-child(1){
-    font-size: 12px;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2) ul{
-    align-content: flex-start;
-    padding: 20px 0;
-    box-sizing: border-box;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2) ul li{
-    font-size: 12px;
-    color: black;
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    line-height: 0;
-    margin: 10px 0;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2) ul li p{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2) ul li p:nth-child(2){
-    font-weight: bold;
-}
-
-.dashboard-container .box:nth-child(9) ul:nth-child(2) ul li p:nth-child(2) span{
-    border-radius: 2px;
-    width: 20px;
-    height: 20px;
-}
-
-/*End Style for "Box 9" Dashboard*/
-
-
-/*start Style for "Box 10" Dashboard*/
-.dashboard-container .box:nth-child(10){
-    display: block;
-    width: 300px;
-    height: 300px;
-}
-
-/*end Style for "Box 10" Dashboard*/
+    gap: 20px;
+  }
+  .graph {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  canvas {
+    width: 100% !important;
+    height: 300px !important;
+  }
