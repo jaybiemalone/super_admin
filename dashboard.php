@@ -367,7 +367,7 @@ $conn->close();
       });
     });
 
-    // Bar Graph (Maintenance Status)
+    // Bar Graph (Maintenance Status tite)
     const maintenanceCtx = document.getElementById('barGraphMaintenance').getContext('2d');
     new Chart(maintenanceCtx, {
       type: 'bar',
