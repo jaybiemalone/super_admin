@@ -1,6 +1,7 @@
 <?php
 
 @include 'config.php';
+@include 'count.php';
 session_start();
 
 if (!isset($_SESSION['user_name'])) {
@@ -82,6 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .modal {
       display: none;
@@ -110,8 +114,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
       font-size: 20px;
       float: right;
     }
-    
-  button {
+
+    button {
       background-color: #4CAF50;
       /* Green background */
       color: white;
@@ -194,7 +198,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             <li><a href="safety.php">Accident <br> Management</a></li>
             <li><a href="inbox.php">Inbox</a></li>
             <li><a href="complaint.php">Complaint <br> Management</a></li>
-            <li><a href="cfsurvey.php">Customer <br> Feedback</a></li>
           </div>
         </ul>
       </li>
@@ -216,14 +219,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
           <span>Announcement</span>
         </a>
       </li>
-      </li>
       <li>
         <a href="maintenance.php">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-            <path
-              d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-40q0-17 11.5-28.5T280-880q17 0 28.5 11.5T320-840v40h320v-40q0-17 11.5-28.5T680-880q17 0 28.5 11.5T720-840v40h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
-          </svg>
-          <span>Maintenance</span>
+          <i class="fa-solid fa-screwdriver-wrench"></i><span>Maintenance</span>
         </a>
       </li>
     </ul>
@@ -232,6 +230,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     <header>
       <div></div>
       <div>
+        <button id="notifyBtn"
+          class="flex items-center gap-2 px-4 py-2 text-black bg-[#F5F5F5] hover:bg-[#E0E0E0] rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <i class="fa-solid fa-bell"></i><span class="count"><?php echo $total; ?></span>
+        </button>
         <button onclick="openLogout()" class="px-4 py-2 text-white bg-red-500 rounded">Logout</button>
       </div>
     </header>
@@ -316,6 +318,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
       <button onclick="checkPassword()">Submit</button>
       <a href="#" onclick="closeModal(event)">Close</a>
     </div>
+    
     <!-- Logout modal -->
     <div id="modal-logout" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
       <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
@@ -327,6 +330,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         </div>
       </div>
     </div>
+
+    <!-- Modal Structure -->
+    <div id="modal-notify" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-6 w-96 shadow-lg relative">
+        <h2 class="text-xl font-bold mb-4">Maintenance Updates</h2>
+        <button id="closeModal" class="absolute top-2 right-2 text-gray-500">&times;</button>
+        <div id="updateContent" class="space-y-4 max-h-80 overflow-y-auto">
+          <!-- Updates will be injected here -->
+        </div>
+      </div>
+    </div>
+
   </main>
   <script>
     $(document).ready(function () {
