@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
   <style>
-  button {
+    button {
       background-color: #4CAF50;
       /* Green background */
       color: white;
@@ -257,7 +257,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <td><?php echo $row['created_at']; ?></td>
               <td><?php echo $row['estimated_day']; ?></td>
               <td><?php echo $row['email']; ?></td>
-              <td><?php echo $row['status']; ?></td>
+              <td
+                class="py-2 px-4 font-semibold <?php echo ($row['status'] == 'Pending') ? 'text-yellow-500' : ($row['status'] == 'On-going' ? 'text-blue-500' : 'text-green-500'); ?>">
+                <?php echo $row['status']; ?>
+              </td>
               <!-- Status update with a button click -->
               <td>
                 <form method="post">
@@ -278,12 +281,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form method="post">
                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                   <select name="update">
-                    <option value="Resolve" <?php if ($row['update'] == 'Resolve')
-                      echo 'selected'; ?>>Resolve (New Update
-                      into the System Version)</option>
-                    <option value="On-going" <?php if ($row['update'] == 'On-going')
-                      echo 'selected'; ?>>On going (System
-                      update)</option>
+                    <option value="System Update" <?php if ($row['update'] == 'System Update')
+                      echo 'selected'; ?>>System
+                      Update </option>
+                    <option value="System Change" <?php if ($row['update'] == 'System Change')
+                      echo 'selected'; ?>>System
+                      Change </option>
                   </select>
                   <button type="submit" name="update_update">Update</button>
                 </form>

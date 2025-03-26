@@ -206,6 +206,17 @@ if (!isset($_SESSION['user_name'])) {
       </div>
     </div>
 
+    <!-- Modal Structure -->
+    <div id="modal-notify" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-6 w-96 shadow-lg relative">
+        <h2 class="text-xl font-bold mb-4">Maintenance Updates</h2>
+        <button id="closeModal" class="absolute top-2 right-2 text-gray-500">&times;</button>
+        <div id="updateContent" class="space-y-4 max-h-80 overflow-y-auto">
+          <!-- Updates will be injected here -->
+        </div>
+      </div>
+    </div>
+
   </main>
 </body>
 

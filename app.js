@@ -74,3 +74,33 @@ function logoutClose() {
 function confirmLogout() {
   window.location.href = 'logout.php';
 }
+
+
+// System update Function
+
+document.getElementById('notifyBtn').addEventListener('click', function() {
+  fetch('fetch_updates.php')
+    .then(response => response.json())
+    .then(data => {
+      const updateContent = document.getElementById('updateContent');
+      updateContent.innerHTML = '';
+      
+      if (data.length === 0) {
+        updateContent.innerHTML = '<p>No updates available.</p>';
+      } else {
+        data.forEach(item => {
+          const box = document.createElement('div');
+          box.classList.add('border', 'p-4', 'rounded-lg', 'bg-gray-100');
+          box.innerHTML = `<strong>${item.name}</strong><p>${item.update}</p>`;
+          updateContent.appendChild(box);
+        });
+      }
+
+      document.getElementById('modal-notify').classList.remove('hidden');
+    });
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+  document.getElementById('modal-notify').classList.add('hidden');
+});
+    

@@ -30,6 +30,17 @@ main{
   align-items: center;
 }
 
+.count {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 #userTable_wrapper{
   display: flex;
   flex-direction: row;

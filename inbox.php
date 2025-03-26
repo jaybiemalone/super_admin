@@ -1,4 +1,8 @@
 <?php
+
+@include 'config.php';
+@include 'count.php';
+
 session_start();
 if (!isset($_SESSION['user_name'])) {
   header("Location: index.php"); // Redirect to login page if not logged in
@@ -20,7 +24,7 @@ if (!isset($_SESSION['user_name'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
 </head>
 
 <body>
@@ -183,6 +187,10 @@ if (!isset($_SESSION['user_name'])) {
     <header>
       <div></div>
       <div>
+        <button id="notifyBtn"
+          class="flex items-center gap-2 px-4 py-2 text-black bg-[#F5F5F5] hover:bg-[#E0E0E0] rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <i class="fa-solid fa-bell"></i><span class="count"><?php echo $total; ?></span>
+        </button>
         <button onclick="openLogout()" class="px-4 py-2 text-white bg-red-500 rounded">Logout</button>
       </div>
     </header>
@@ -222,6 +230,17 @@ if (!isset($_SESSION['user_name'])) {
         <div class="flex justify-end gap-3">
           <button onclick="logoutClose()" class="px-4 py-2 bg-gray-300 rounded">Cancel</button>
           <button onclick="confirmLogout()" class="px-4 py-2 text-white bg-red-500 rounded">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal-notify" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+      <div class="bg-white rounded-lg p-6 w-96 shadow-lg relative">
+        <h2 class="text-xl font-bold mb-4">Maintenance Updates</h2>
+        <button id="closeModal" class="absolute top-2 right-2 text-gray-500">&times;</button>
+        <div id="updateContent" class="space-y-4 max-h-80 overflow-y-auto">
+          <!-- Updates will be injected here -->
         </div>
       </div>
     </div>

@@ -23,6 +23,13 @@ header div button:hover{
     background-color: whitesmoke;
 }
 
+header div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 header div button i{
     color: black;
 }

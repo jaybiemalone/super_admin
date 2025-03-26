@@ -1,6 +1,7 @@
 <?php
 
 @include 'config.php';
+@include 'count.php';
 
 session_start();
 if (!isset($_SESSION['user_name'])) {
@@ -8,9 +9,11 @@ if (!isset($_SESSION['user_name'])) {
   exit();
 }
 
+
 // Fetch data from complaints table
 $sql = "SELECT id, subject, name, email, vehicle_number, classification, status, date_submitted FROM complaints";
 $result = $conn->query($sql);
+
 
 ?>
 
@@ -445,6 +448,10 @@ $result = $conn->query($sql);
     <header>
       <div></div>
       <div>
+        <button id="notifyBtn"
+          class="flex items-center gap-2 px-4 py-2 text-black bg-[#F5F5F5] hover:bg-[#E0E0E0] rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <i class="fa-solid fa-bell"></i><span class="count"><?php echo $total; ?></span>
+        </button>
         <button onclick="openLogout()" class="px-4 py-2 text-white bg-red-500 rounded">Logout</button>
       </div>
     </header>
@@ -643,6 +650,16 @@ $result = $conn->query($sql);
     </div>
   </div>
 
+  <!-- Modal Structure -->
+  <div id="modal-notify" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 w-96 shadow-lg relative">
+      <h2 class="text-xl font-bold mb-4">Maintenance Updates</h2>
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-500">&times;</button>
+      <div id="updateContent" class="space-y-4 max-h-80 overflow-y-auto">
+        <!-- Updates will be injected here -->
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
